@@ -1,8 +1,14 @@
 # Don't include .env files
 .env
 
+# Don't include VS Code settings
+.vscode
+
 # Just incase glitch messes up
 .git-credentials
+
+# Don't include VS Code settings
+.vscode
 
 # Apple folder metadata
 .DS_Store
