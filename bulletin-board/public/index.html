@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <style>
-    #myDiv{
-      background-color: blue;
-      height: 200px;
-      width: 200px;
-    }
     
     </style>
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -40,34 +35,6 @@
     	<div id="react-container"></div>
 
       <script type="text/babel">
-
-      class Box extends React.Component {
-        constructor(props){
-          super(props)
-          this.state = {
-            backgroundColor: 'purple'
-          }
-          this.update = this.update.bind(this)
-        }
-
-        update(){
-          this.setState({
-            backgroundColor: 'green'
-          })
-        }
-
-        componentDidUpdate(){
-          alert( 'component was updated')
-        }
-
-        render() {
-          return (
-            <div id="myDiv" style={this.state} onClick={this.update}></div>
-          )
-        }
-      }
-      
-      ReactDOM.render(<Box />, document.getElementById('react-container'))
       </script>
 
     <!--
