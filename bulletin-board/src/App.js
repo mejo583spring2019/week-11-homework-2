@@ -4,6 +4,7 @@ import "./App.css";
 
 const x = "Brooke";
 
+
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,8 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hello World! {x}
+            Hello World, {x}!
+            Welcome {x} to the world of React
           </p>
           <a
             className="App-link"
