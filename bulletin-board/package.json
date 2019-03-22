@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "create-react-app": "^2.1.8",
+    "eslint": "^5.15.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",
