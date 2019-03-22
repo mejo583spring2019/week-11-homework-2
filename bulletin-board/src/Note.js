@@ -10,6 +10,9 @@ class Note extends Component {
     };
     this.edit = this.edit.bind(this);
     this.remove = this.remove.bind(this);
+    this.save = this.save.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.renderDisplay = this.renderDisplay.bind(this);
   }
 
   edit() {
@@ -22,18 +25,22 @@ class Note extends Component {
     alert("removing note");
   }
 
+  save() {
+    alert("saved!");
+  }
+
   renderForm() {
     return (
       <div className="note">
         <form>
           <textarea />
-          <button><FaRegSave /></button>
+          <button onClick={this.save}><FaRegSave /></button>
         </form>
       </div>
     );
   }
 
-  render() {
+  renderDisplay() {
     return (
       <div className="note">
         <p>Learn React</p>
@@ -43,6 +50,14 @@ class Note extends Component {
         </span>
       </div>
     );
+  }
+
+  render() {
+    if (this.state.editing) {
+      return this.renderForm();
+    } else {
+      return this.renderDisplay();
+    }
   }
 }
 
