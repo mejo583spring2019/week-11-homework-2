@@ -92,3 +92,9 @@ div.board button {
 #remove {
   background-color: #d9534f;
 }
+
+div.note svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
