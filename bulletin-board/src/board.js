@@ -44,7 +44,6 @@ class Board extends Component {
   }
 
   update(newText, i) {
-    console.log("updating item at index i", i, newText);
     this.setState((prevState) => ({
       notes: prevState.notes.map(
           (note) => (note.id !== i) ? note : {...note, note: newText}
@@ -53,7 +52,6 @@ class Board extends Component {
   }
 
   remove(id) {
-    console.log("removing item at", id);
     this.setState((prevState) => ({
       notes: prevState.notes.filter((note) => note.id !== id),
     }));
