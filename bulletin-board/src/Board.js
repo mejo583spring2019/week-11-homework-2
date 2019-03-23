@@ -6,34 +6,22 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [
-        {
-          id: 0,
-          note: "Call Lisa",
-        },
-        {
-          id: 1,
-          note: "Email John",
-        },
-        {
-          id: 2,
-          note: "Order printer ink",
-        },
-      ],
+      notes: [],
     };
+    this.add = this.add.bind(this);
     this.eachNote = this.eachNote.bind(this);
     this.update = this.update.bind(this);
     this.remove = this.remove.bind(this);
-    this.add = this.add.bind(this);
     this.nextId = this.nextId.bind(this);
   }
+
 
   add(text) {
     this.setState((prevState) => ({
       notes: [
         ...prevState.notes,
         {
-          id: this.nextId,
+          id: this.nextId(),
           note: text,
         },
       ],
@@ -54,7 +42,6 @@ class Board extends Component {
   }
 
   remove(id) {
-    console.log("removing item at", id);
     this.setState((prevState) => ({
       notes: prevState.notes.filter((note) => note.id !== id),
     }));
@@ -76,7 +63,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.state.notes.map(this.eachNote)}
-        <button onClick={this.add.bind(null, "New Note")}
+        <button onClick={this.add.bind(null, "New note")}
           id="add">
           <FaPlus />
         </button>
