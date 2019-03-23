@@ -1,8 +1,6 @@
-/* g FaTrash */
-
 import React, { Component } from "react";
 import { FaPencilAlt } from "react-icons/fa";
-import { FaTrash } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 class Note extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +19,7 @@ class Note extends Component {
         <p>Learn React</p>
         <span>
           <button onClick={this.edit} id="edit"><FaPencilAlt /></button>
-          <button onClick={this.remove} id="remove"><FaTrash /></button>
+          <button onClick={this.remove} id="remove"><FaTrashAlt /></button>
         </span>
       </div>
     );
