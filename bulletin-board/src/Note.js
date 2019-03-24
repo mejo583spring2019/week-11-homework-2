@@ -33,7 +33,7 @@ class Note extends Component {
     return (
       <div className="note">
         <form>
-          <textarea />
+          <textarea ref={/>
           <button onClick={this.save}><FaRegSave /></button>
         </form>
       </div>
