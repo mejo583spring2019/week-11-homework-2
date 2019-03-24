@@ -40,7 +40,7 @@ class Board extends Component {
   remove(id) {
     // console.log("removing item at", id);
     this.setState((prevState) => ({
-      notes: prevState.notes.filter((note) => note.id != id),
+      notes: prevState.notes.filter((note) => note.id !== id),
     }));
   }
 

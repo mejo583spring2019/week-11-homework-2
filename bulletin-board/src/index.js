@@ -4,7 +4,8 @@ import "./index.css";
 import Board from "./Board";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Board />, document.getElementById("root"));
+ReactDOM.render(<Board />, document.getElementById("react-container"));
+// changed from id of "root"
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
