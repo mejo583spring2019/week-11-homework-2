@@ -49,11 +49,7 @@ class Note extends Component {
     );
   }
   render() {
-    if (this.state.editing) {
-      return this.renderForm();
-    } else {
-      return this.renderDisplay();
-    }
+    return this.state.editing ? this.renderForm : this.renderDisplay();
   }
 }
 
