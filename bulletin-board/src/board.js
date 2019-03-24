@@ -45,7 +45,7 @@ class Board extends Component {
   update(newText, i) {
     this.setState((prevState) => ({
       notes: prevState.notes.map(
-          (note) => (note.id !== i) ? note : {...note, note: newText}
+          (note) => (note.id !== i) ? note : { ...note, note: newText }
       ),
     }));
   }
@@ -56,10 +56,11 @@ class Board extends Component {
     }));
   }
 
+
   eachNote(note, i) {
     return (
-      <Note key={i}
-        index={i}
+      <Note key={note.id}
+        index={note.id}
         onChange={this.update}
         onRemove={this.remove}>
         {note.note}
@@ -71,7 +72,7 @@ class Board extends Component {
     return (
       <div className="board">
         {this.state.notes.map(this.eachNote)}
-        <button onClick={this.add.bind(null, "New Note")}
+        <button onClick={this.add.bind(null, "New note")}
           id="add">+</button>
       </div>
     );

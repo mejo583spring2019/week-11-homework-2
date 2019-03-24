@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-// import { FaPencilAlt } from "react-icons/fa";
-// import { FaTrashAlt } from "react-icons/fa";
-// import { FaRegSave } from "react-icons/fa";
+
 class Note extends Component {
   constructor(props) {
     super(props);
@@ -15,25 +13,32 @@ class Note extends Component {
     this.renderDisplay = this.renderDisplay.bind(this);
     this.randomBetween = this.randomBetween.bind(this);
   }
+
   componentWillMount() {
     this.style = {
-      right: this.randomBetween(0, window.innerWidth -150, "px"),
-      top: this.randomBetween(0, window.innerHeight-150, "px"),
+      right: this.randomBetween(0, window.innerWidth - 150, "px"),
+      top: this.randomBetween(0, window.innerHeight - 150, "px"),
       transform: `rotate(${this.randomBetween(-25, 25, "deg")})`,
     };
   }
 
-  randomBetween(x, y, s) {
-    return x + Math.ceil(Math.random() * (y-x)) + s;
-  }
   componentDidUpdate() {
     let textArea;
-    textArea = "";
     if (this.state.editing) {
       textArea = this._newText;
       textArea.focus();
       textArea.select();
     }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      this.props.children !== nextProps.children || this.state !== nextState
+    );
+  }
+
+  randomBetween(x, y, s) {
+    return x + Math.ceil(Math.random() * (y - x)) + s;
   }
 
   edit() {
@@ -59,8 +64,8 @@ class Note extends Component {
       <div className="note" style={this.style}>
         <form onSubmit={this.save}>
           <textarea ref={(input) => this._newText = input}
-            defaultValue={this.props.children}/>
-          <button id='save'>save</button>
+            defaultValue={this.props.children} />
+          <button id="save">save</button>
         </form>
       </div>
     );
