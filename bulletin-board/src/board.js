@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Note from "./Note";
-// import FaPlus from "react-icons/lib/fa/plus";
 
 class Board extends Component {
   constructor(props) {
@@ -13,6 +12,17 @@ class Board extends Component {
     this.update = this.update.bind(this);
     this.remove = this.remove.bind(this);
     this.nextId = this.nextId.bind(this);
+  }
+
+  componentWillMount() {
+    const self = this;
+    if (this.props.count) {
+      fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
+          .then((response) => response.json())
+          .then((json) => json[0]
+              .split(". ")
+              .forEach((sentence) => self.add(sentence.substring(0, 25))));
+    }
   }
 
   add(text) {
@@ -62,9 +72,7 @@ class Board extends Component {
       <div className="board">
         {this.state.notes.map(this.eachNote)}
         <button onClick={this.add.bind(null, "New Note")}
-          id="add">
-          add
-        </button>
+          id="add">+</button>
       </div>
     );
   }
