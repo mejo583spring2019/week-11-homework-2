@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { FaPencilAlt } from "react-icons/fa";
-import { FaTrashAlt } from "react-icons/fa";
-import { FaRegSave } from "react-icons/fa";
+// import { FaPencilAlt } from "react-icons/fa";
+// import { FaTrashAlt } from "react-icons/fa";
+// import { FaRegSave } from "react-icons/fa";
 class Note extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +33,8 @@ class Note extends Component {
     return (
       <div className="note">
         <form>
-          <textarea ref={/>
-          <button onClick={this.save}><FaRegSave /></button>
+          <textarea />
+          <button onClick={this.save}>save</button>
         </form>
       </div>
     );
@@ -45,8 +45,8 @@ class Note extends Component {
       <div className="note">
         <p>Learn React</p>
         <span>
-          <button onClick={this.edit} id="edit"><FaPencilAlt /></button>
-          <button onClick={this.remove} id="remove"><FaTrashAlt /></button>
+          <button onClick={this.edit} id="edit">edit</button>
+          <button onClick={this.remove} id="remove">remove</button>
         </span>
       </div>
     );
