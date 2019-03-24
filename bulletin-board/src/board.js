@@ -7,15 +7,15 @@ class Board extends Component {
     this.state = {
       notes: [
         {
-          id: 33,
+          id: 0,
           note: "Call Lisa",
         },
         {
-          id: 34,
+          id: 1,
           note: "Email John",
         },
         {
-          id: 35,
+          id: 2,
           note: "Order printer ink",
         },
       ],
@@ -23,10 +23,20 @@ class Board extends Component {
     this.eachNote = this.eachNote.bind(this);
   }
 
+  update(newText, i) {
+    console.log("updating item at index", i, newText);
+    this.setState((prevState) => ({
+      note: prevState.notes.map(
+          (note)=> (note.id !== i) ? note : {...note, note: newText}
+      ),
+    }));
+  }
+
   eachNote(note, i) {
     return (
       <Note key={i}
-        index={i}>
+        index={i}
+        onChange={this.update}>
         {note.note}
       </Note>
     );
