@@ -6,23 +6,32 @@ import FaFloppy0 from "react-icons/lib/fa/floppy-o";
 class Note extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      editing: false,
+    };
     this.edit = this.edit.bind(this);
     this.remove = this.remove.bind(this);
+    this.save = this.save.bind(this);
     this.renderForm = this.renderForm.bind(this);
   }
+
   edit() {
-    alert("editing note");
+    this.setState({
+      editiing: true,
+    });
   }
+
   remove() {
     alert("removing note");
   }
-
+  save() {
+  }
   renderForm() {
     return (
       <div className='note'>
         <form>
           <textarea />
-          <button><FaFloppy0></FaFloppy0></button>
+          <button onClick={this.save}><FaFloppy0 /></button>
         </form>
       </div>
     );
@@ -39,6 +48,14 @@ class Note extends Component {
       </div>
     );
   }
+  render() {
+    if (this.state.editing) {
+      return this.renderForm();
+    } else {
+      return this.renderDisplay();
+    }
+  }
 }
 
-export default Note;
+export default Note
+;
