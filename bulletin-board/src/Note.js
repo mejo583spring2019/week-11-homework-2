@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import FaPencil from "react-icons/lib/fa/pencil";
-import FaTrash from "react-icons/lib/fa/trash";
-import FaFloppy0 from "react-icons/lib/fa/floppy-o";
-
+import { FaPencilAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaRegSave } from "react-icons/fa";
 class Note extends Component {
   constructor(props) {
     super(props);
@@ -13,25 +12,29 @@ class Note extends Component {
     this.remove = this.remove.bind(this);
     this.save = this.save.bind(this);
     this.renderForm = this.renderForm.bind(this);
+    this.renderDisplay = this.renderDisplay.bind(this);
   }
 
   edit() {
     this.setState({
-      editiing: true,
+      editing: true,
     });
   }
 
   remove() {
     alert("removing note");
   }
+
   save() {
+    alert("saved!");
   }
+
   renderForm() {
     return (
-      <div className='note'>
+      <div className="note">
         <form>
           <textarea />
-          <button onClick={this.save}><FaFloppy0 /></button>
+          <button onClick={this.save}><FaRegSave /></button>
         </form>
       </div>
     );
@@ -42,16 +45,16 @@ class Note extends Component {
       <div className="note">
         <p>Learn React</p>
         <span>
-          <button onClick={this.edit} id="edit"><FaPencil /></button>
-          <button onClick={this.remove} id="remove"><FaTrash /></button>
+          <button onClick={this.edit} id="edit"><FaPencilAlt /></button>
+          <button onClick={this.remove} id="remove"><FaTrashAlt /></button>
         </span>
       </div>
     );
   }
+
   render() {
-    return this.state.editing ? this.renderForm : this.renderDisplay();
+    return this.state.editing ? this.renderForm() : this.renderDisplay();
   }
 }
 
-export default Note
-;
+export default Note;
