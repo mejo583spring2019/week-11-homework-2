@@ -22,6 +22,7 @@ class Board extends Component {
 		}
 		this.eachNote = this.eachNote.bind(this)
 		this.update = this.update.bind(this)
+		this.remove = this.remove.bind(this)
 	}
 
 	update(newText, i) {
