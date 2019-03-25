@@ -19,10 +19,10 @@ class Note extends Component {
 
   componentWillMount() {
     this.style = {
-      right: this.randomBetween(0, window.innerWidth - 150, 'px')
-      top: this.randomBetween(0, window.innerHeight - 150, 'px')
-      transform: `rotate(${this.randomBetween(-25, 25, 'deg')})`
-    }
+      right: this.randomBetween(0, window.innerWidth - 150, "px"),
+      top: this.randomBetween(0, window.innerHeight - 150, "px"),
+      transform: `rotate(${this.randomBetween(-25, 25, "deg")})`,
+    };
   }
 
   randomBetween(x, y, s) {
@@ -31,19 +31,18 @@ class Note extends Component {
   }
 
   componentDidUpdate() {
-    var textArea
+    let textArea;
     if (this.state.editing) {
-      textArea = this._newText
-      textArea.focus()
-      textArea.select()
+      textArea = this._newText;
+      textArea.focus();
+      textArea.select();
     }
   }
   shouldComponentUpdate(nextProps, nextState) {
     return (
       this.props.children !== nextProps.children || this.state !== nextState
-    )
+    );
   }
-
 
 
   edit() {

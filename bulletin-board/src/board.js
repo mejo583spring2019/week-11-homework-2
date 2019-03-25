@@ -46,20 +46,20 @@ class Board extends Component {
 
 
     update(newText, i) {
-        console.log('updating item at index', i, newText),
-            this.setState(prevState => ({
-                notes=prevState.notes.map => (
-                    note => (note.id !== i) ? note : { ...note, note: newText }
-                )
+        console.log('updating item at index', i, newText)
+        this.setState(prevState => ({
+            notes= prevState.notes.map => (
+                note => (note.id !== i) ? note : { ...note, note: newText }
+            )
 
         }))
-}
+};
 remove(id){
     console.log('removing item at', id)
     this.setState(prevState => ({
         notes: prevState.notes.filter(note.id !== id)
     }))
-}
+};
 
 eachNote(note, i) {
     return (
@@ -70,17 +70,8 @@ eachNote(note, i) {
             {note.note}
         </Note>
     )
-}
-render() {
-    return (
-        <div className="board">
-            {this.state.notes.map(this.eachNote)}
-            <button onClick={this.add.bind(null, "New Note")}
-                id="add"> <FaPlus /> </button>
-        </div>
-    )
-}
-}
+};
+};
 
 
 
