@@ -3,14 +3,6 @@
 
 <head>
   <meta charset="utf-8" />
-  <style>
-    #myDiv {
-      background-color: blue;
-      height: 200px;
-      width: 200px;
-    }
-  </style>
-
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#000000" />
@@ -45,38 +37,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-  <script type="text/babel">
-  class Box extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        backgroundColor: 'purple'
-      }
-      this.update = this.update.bind(this);
-    }
-
-    update() {
-      this.setState({
-        backgroundColor: 'green'
-      })
-    }
-
-    componentDidUpdate() {
-      alert('the component has been updated!');
-    }
-    
-    render() {
-      return (
-        <div id="myDiv" style={this.state} onClick={this.update}></div>
-      )
-    }
-  }
-
-  ReactDOM.render(<Box />, document.getElementById('root'))
-  </script>
 </body>
 
 </html>

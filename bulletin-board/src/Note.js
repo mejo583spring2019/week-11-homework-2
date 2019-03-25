@@ -9,12 +9,12 @@ class Note extends Component {
     this.state = {
       editing: false,
     };
+    this.randomBetween = this.randomBetween.bind(this);
     this.edit = this.edit.bind(this);
     this.remove = this.remove.bind(this);
     this.save = this.save.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderDisplay = this.renderDisplay.bind(this);
-    this.randomBetween = this.randomBetween.bind(this);
   }
 
   componentWillMount() {
@@ -68,9 +68,9 @@ class Note extends Component {
         <form onSubmit={this.save}>
           <textarea ref={(input) => this._newText = input}
             defaultValue={this.props.children} />
-          <button id="save" onClick={this.save}><FaSave /></button>
+          <button id="save"><FaSave /></button>
         </form>
-      </div>
+      </div >
     );
   }
 
@@ -80,7 +80,7 @@ class Note extends Component {
         <p>{this.props.children}</p>
         <span>
           <button onClick={this.edit} id="edit"><FaPencilAlt /></button>
-          <button onCLick={this.remove} id="remove"><FaTrash /></button>
+          <button onClick={this.remove} id="remove"><FaTrash /></button>
         </span>
       </div>
     );
