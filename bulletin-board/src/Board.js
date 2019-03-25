@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Note from "./Note";
-import FaPlus from "react-icon/lib/fa/plus";
+import { FaPlus } from "react-icons/fa";
 
 class Board extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class Board extends Component {
   componentWillMount() {
     const self = this;
     if (this.props.count) {
-      fetch("https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}")
+      fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
           .then((response) => response.json())
           .then((json) => json[0]
               .split(". ")

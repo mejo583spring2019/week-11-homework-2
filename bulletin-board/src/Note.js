@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import FaPencil from "react-icons/lib/fa/pencil";
-import FaTrash from "react-icons/lib/fa/trash";
-import FaFloppy0 from "react-icons/lib/fa/floppy-o";
+import { FaPencilAlt } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
+import { FaSave } from "react-icons/fa";
 
 class Note extends Component {
   constructor(props) {
@@ -68,7 +68,7 @@ class Note extends Component {
         <form onSubmit={this.save}>
           <textarea ref={(input) => this._newText = input}
             defaultValue={this.props.children} />
-          <button id="save" onClick={this.save}><FaFloppy0 /></button>
+          <button id="save" onClick={this.save}><FaSave /></button>
         </form>
       </div>
     );
@@ -79,7 +79,7 @@ class Note extends Component {
       <div className="note" style={this.style}>
         <p>{this.props.children}</p>
         <span>
-          <button onClick={this.edit} id="edit"><FaPencil /></button>
+          <button onClick={this.edit} id="edit"><FaPencilAlt /></button>
           <button onCLick={this.remove} id="remove"><FaTrash /></button>
         </span>
       </div>
