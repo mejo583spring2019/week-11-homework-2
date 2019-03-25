@@ -4,7 +4,9 @@ import "./index.css";
 import Board from "./Board";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Board />, document.getElementById("react-container"));
+ReactDOM.render(<Board count={50} />,
+    document.getElementById("root"));
+
 // changed from id of "root"
 
 // If you want your app to work offline and load faster, you can change
