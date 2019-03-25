@@ -17,6 +17,7 @@ class Board extends Component {
                 }
             ]
         }
+        this.eachNote = this.eachNote.bind(this)
     }
 
     eachNote(note, i) {
@@ -36,8 +37,7 @@ class Board extends Component {
     render() {
         return (
             <div className="board">
-                <Note>
-                </Note>
+                {this.render.state.notes.map(this.eachNote)}
             </div>
         )
     }
