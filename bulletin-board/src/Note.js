@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// Had help with figuring out the correct syntax/names for
+// the icons, since we needed the free/correct versions
 import { FaPencilAlt } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaSave } from "react-icons/fa";
