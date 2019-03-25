@@ -3,10 +3,36 @@ import Note from "./Note"
 ;
 
 class Board extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      note: [
+        {
+          id: 33,
+          note: "Call Lisa",
+        },
+        {
+          id: 34,
+          note: "Email John",
+        },
+      ],
+    };
+    this.eachNote = this.eachNotebind(this);
+  }
+
+  eachNote(note, i) {
+    return (
+      <Note key={i}
+        index={i}>
+        {note.note}
+      </Note>
+    );
+  }
+
   render() {
     return (
       <div className="board">
-        <Note></Note>
+        {this.state.notes.map(this.eachNote)}
       </div>
     );
   }
